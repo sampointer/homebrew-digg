@@ -2,16 +2,16 @@
 class Digg < Formula
   desc "Look up region and other information for any Google IP address"
   homepage "https://github.com/sampointer/digg"
-  version "0.1.0"
+  version "0.1.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sampointer/digg/releases/download/v0.1.0/digg_0.1.0_Darwin_x86_64.tar.gz"
-    sha256 "30a77daa34c9fd6aeed9b66e7d7e96417b6d27548fef163c2f5d37f34ffe0f87"
+    url "https://github.com/sampointer/digg/releases/download/v0.1.1/digg_0.1.1_Darwin_x86_64.tar.gz"
+    sha256 "99a6c36406b65f8a5971fc9c7afd8e5841dca01d31cce2dc0ac0e0caedb782ac"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sampointer/digg/releases/download/v0.1.0/digg_0.1.0_Linux_x86_64.tar.gz"
-    sha256 "9606260f10e410a3a523ca0eb332a36a4b1cbec0fcd60d587f90c2395d88477f"
+    url "https://github.com/sampointer/digg/releases/download/v0.1.1/digg_0.1.1_Linux_x86_64.tar.gz"
+    sha256 "0c207ffcc8f040dcfc95b00a5e73f1cc8ab7f34e78fbf02888d197b4b7a34a51"
   end
 
   def install
