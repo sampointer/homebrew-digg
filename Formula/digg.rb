@@ -5,20 +5,25 @@
 class Digg < Formula
   desc "Look up region and other information for any Google IP address"
   homepage "https://github.com/sampointer/digg"
-  version "0.2.3"
+  version "0.2.4"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/sampointer/digg/releases/download/v0.2.3/digg_0.2.3_Darwin_x86_64.tar.gz"
-    sha256 "5b868394f81cb491cb70ac373119b29d3393a679182fee546cd886d8456f182c"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/sampointer/digg/releases/download/v0.2.4/digg_0.2.4_Darwin_x86_64.tar.gz"
+      sha256 "65b4b49f31e7f90130658b6787caa2b19aa09e60e36e454ade10dd19e8e2ac91"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sampointer/digg/releases/download/v0.2.3/digg_0.2.3_Linux_x86_64.tar.gz"
-    sha256 "e1701639697a74a001d2675c2ff3ee04118028d1e364f33178728e1736121c91"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/sampointer/digg/releases/download/v0.2.3/digg_0.2.3_Linux_arm64.tar.gz"
-    sha256 "82765d0a2acaa14baa8202ea4adbc0aaf781e8a168aa55204d609e614abab00c"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/sampointer/digg/releases/download/v0.2.4/digg_0.2.4_Linux_x86_64.tar.gz"
+      sha256 "605e63dbdb274d01a7a372705b17afe1c17fce04f459a9cc94af7cd9469ea8eb"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sampointer/digg/releases/download/v0.2.4/digg_0.2.4_Linux_arm64.tar.gz"
+      sha256 "08586e668ff8adde2390dbb7056d4d7c40fa3a1692e5c5d0725616c1ea4d5095"
+    end
   end
 
   def install
