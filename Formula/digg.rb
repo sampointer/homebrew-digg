@@ -5,32 +5,43 @@
 class Digg < Formula
   desc "Look up region and other information for any Google IP address"
   homepage "https://github.com/sampointer/digg"
-  version "0.2.6"
-  bottle :unneeded
+  version "0.2.7"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/sampointer/digg/releases/download/v0.2.6/digg_0.2.6_Darwin_arm64.tar.gz"
-      sha256 "43ce19f91db35a35d8eb84402094ab306dfcaa3125d3b4a4f164b80b1eefe1c2"
+      url "https://github.com/sampointer/digg/releases/download/v0.2.7/digg_0.2.7_Darwin_arm64.tar.gz"
+      sha256 "b98ca57a7d02a35d615f0d4e9d2a44e4fa59f6cb6115304de8cfe4ca6496d1ac"
+
+      def install
+        bin.install "digg"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sampointer/digg/releases/download/v0.2.6/digg_0.2.6_Darwin_x86_64.tar.gz"
-      sha256 "5ce1522ccbbb972084b36fc31a3670613c95998b5065c9b255d45cb361b52d75"
+      url "https://github.com/sampointer/digg/releases/download/v0.2.7/digg_0.2.7_Darwin_x86_64.tar.gz"
+      sha256 "e01d7291cb4ffcf4abcb77c4fb5a7b85175b7563ac7ba80c8ac44a33865a637c"
+
+      def install
+        bin.install "digg"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sampointer/digg/releases/download/v0.2.6/digg_0.2.6_Linux_x86_64.tar.gz"
-      sha256 "66ed127c06325c923b6ba0299e01c0c3f24229e5e9ac7ffe244037edf1e39e88"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sampointer/digg/releases/download/v0.2.6/digg_0.2.6_Linux_arm64.tar.gz"
-      sha256 "9c6cb6be4e615d334500cc04838a139dbf7af4bf439311dcd63b1c4efb40da65"
-    end
-  end
+      url "https://github.com/sampointer/digg/releases/download/v0.2.7/digg_0.2.7_Linux_arm64.tar.gz"
+      sha256 "d986a364fdd0c2fefb8098499f97947aa62a0035eec28bc0c41ec956ba6053a1"
 
-  def install
-    bin.install "digg"
+      def install
+        bin.install "digg"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/sampointer/digg/releases/download/v0.2.7/digg_0.2.7_Linux_x86_64.tar.gz"
+      sha256 "26813610110a8f1c3e777f2299afb0333ad3e8623103f456e502da5b8cc46e6f"
+
+      def install
+        bin.install "digg"
+      end
+    end
   end
 end
